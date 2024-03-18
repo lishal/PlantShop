@@ -15,8 +15,17 @@
     margin-block: auto;
     height: 60%;
     aspect-ratio: 1;
-    background-color: #d8ddd7;
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    cursor: pointer;
+}
+
+.leftHeaderItem:hover {
+    background-color: #d8ddd7;
 }
 
 .rightHeader {
@@ -90,6 +99,11 @@
     -webkit-backdrop-filter: blur(11px);
     border: 1px solid rgba(255, 255, 255, 0.09);
     cursor: pointer;
+}
+
+.nextBtn:hover,
+.previousBtn:hover {
+    background-color: #d8ddd7;
 }
 
 .productDetail {
