@@ -1,0 +1,29 @@
+.sidebarContainer {
+    width: 50px;
+    height: 200px;
+    border-radius: 50px;
+    background-color: rgb(239, 247, 242);
+    border-color: rgb(239, 247, 242);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    filter: drop-shadow(0 0 0.5rem rgb(239, 247, 242));
+}
+
+.sideBarItem {
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+
+.sideBarItem.active {
+    background-color: rgb(211, 227, 213);
+    border-radius: 50%;
+}
+
+.sideBarItem:hover {
+    background-color: rgb(211, 227, 213);
+    border-radius: 50%;
+}
