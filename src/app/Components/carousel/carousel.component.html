@@ -18,8 +18,19 @@
     <div class="productContainer flex-center">
         <div class="productDetail flex-center" *ngFor="let product of products;let i=index"
             [ngClass]="{'activeProduct': i==1}">
+
             <img class="productImage" [id]="product.id" [src]="product.productImage" [alt]="product.name">
+            <div *ngIf="product.id != activeIndex" class="productInfo flex-center">
+                <div class="inactiveItem-name">
+                    {{ product.name }}
+                </div>
+                <div class="inactiveItem-price">
+                    {{ product.price }}
+                </div>
+
+            </div>
         </div>
+
     </div>
     <button class="previousBtn" (click)="onPreviousBtnClick()">
         <img src="../../../assets/svgs/arrow-left.svg" alt="ArrowLeft">
@@ -30,9 +41,17 @@
 </div>
 <div class="imageInfo">
     <div *ngFor="let product of products">
-        <div *ngIf="product.id == activeIndex">
-            <p>Name: {{ product.name }}</p>
-            <p>Price: {{ product.price }}</p>
+        <div class="activeSliderDetail" *ngIf="product.id == activeIndex">
+            <div class="activeSliderImage-name">
+                {{ product.name }}
+            </div>
+            <div class="activeSliderImage-price">
+                {{ product.price }}
+            </div>
+
         </div>
+    </div>
+    <div class="activeSlidercartBtn">
+        <button class="flex-center">+ Add to Cart</button>
     </div>
 </div>

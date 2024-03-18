@@ -38,3 +38,18 @@ main {
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.09);
 }
+
+@media only screen and (max-width:844px) {
+    .mainContainer {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+
+    .sideBar {
+        height: 5vh;
+        width: 100%;
+
+    }
+
+}
