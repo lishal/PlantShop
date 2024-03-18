@@ -4,31 +4,31 @@
             "id": 1,
             "name": "Plant 1",
             "price": "Rs. 1000",
-            "productImage": ".images/productImages/plant1.jpg"
+            "productImage": "./assets/images/productImages/plant1.png"
         },
         {
             "id": 2,
             "name": "Plant 2",
             "price": "Rs. 1100",
-            "productImage": ".images/productImages/plant2.jpg"
+            "productImage": "./assets/images/productImages/plant2.png"
         },
         {
             "id": 3,
             "name": "Plant 3",
             "price": "Rs. 1050",
-            "productImage": ".images/productImages/plant3.jpg"
+            "productImage": "./assets/images/productImages/plant3.png"
         },
         {
             "id": 4,
             "name": "Plant 4",
             "price": "Rs. 900",
-            "productImage": ".images/productImages/plant4.jpg"
+            "productImage": "./assets/images/productImages/plant4.png"
         },
         {
             "id": 5,
             "name": "Plant 5",
             "price": "Rs. 1200",
-            "productImage": ".images/productImages/plant5.jpg"
+            "productImage": "./assets/images/productImages/plant5.png"
         }
     ]
 }

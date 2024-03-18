@@ -109,9 +109,16 @@
 .productDetail {
     width: 300px;
     height: 99%;
-    border: 2px solid red;
+
 }
 
+.productImage {
+    height: 200px;
+}
+
+.activeProduct {
+    background-color: red;
+}
 
 .imageInfo {
     position: absolute;
