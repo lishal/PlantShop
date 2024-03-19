@@ -25,7 +25,7 @@ export class CarouselComponent implements OnInit {
       this.activeIndexData = this.products.filter(
         (product) => product.id == this.activeIndex
       );
-    }, 100);
+    }, 400);
   }
 
   onPreviousBtnClick() {
