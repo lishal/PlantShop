@@ -40,7 +40,7 @@
     </button>
 </div>
 <div class="imageInfo">
-    <div *ngFor="let product of products">
+    <!-- <div *ngFor="let product of products">
         <div class="activeSliderDetail" *ngIf="product.id == activeIndex">
             <div class="activeSliderImage-name">
                 {{ product.name }}
@@ -49,6 +49,14 @@
                 {{ product.price }}
             </div>
 
+        </div>
+    </div> -->
+    <div class="activeSliderDetail">
+        <div class="activeSliderImage-name flex-center">
+            {{ activeIndexData[0].name }}
+        </div>
+        <div class="activeSliderImage-price flex-center">
+            {{ activeIndexData[0].price}}
         </div>
     </div>
     <div class="activeSlidercartBtn">

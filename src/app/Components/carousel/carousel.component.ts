@@ -9,6 +9,7 @@ import { DataService } from 'src/app/Services/data.service';
 export class CarouselComponent implements OnInit {
   products: any[];
   activeIndex: number = 2;
+  activeIndexData: any[];
   constructor(
     private dataService: DataService,
     private elementRef: ElementRef
@@ -17,7 +18,14 @@ export class CarouselComponent implements OnInit {
     this.dataService.loadProducts().subscribe((data) => {
       this.products = data.products;
     });
+
+    setTimeout(() => {
+      this.activeIndexData = this.products.filter(
+        (product) => product.id == this.activeIndex
+      );
+    }, 100);
   }
+
   onPreviousBtnClick() {
     var elementRef =
       this.elementRef.nativeElement.children[0].getElementsByClassName(
@@ -31,6 +39,9 @@ export class CarouselComponent implements OnInit {
     elementRef.children[1].classList.add('activeProduct');
     this.activeIndex =
       elementRef.getElementsByClassName('activeProduct')[0].children[0].id;
+    this.activeIndexData = this.products.filter(
+      (product) => product.id == this.activeIndex
+    );
 
     // elementRef.children[0].classList.add('activeProduct');
     // elementRef.productSlider[0].classList.add('activeProduct');
@@ -53,6 +64,9 @@ export class CarouselComponent implements OnInit {
     elementRef.children[1].classList.add('activeProduct');
     this.activeIndex =
       elementRef.getElementsByClassName('activeProduct')[0].children[0].id;
+    this.activeIndexData = this.products.filter(
+      (product) => product.id == this.activeIndex
+    );
     // elementRef.children[0].classList.add('activeProduct');
     // if (this.selectedIndex === this.products.length - 1) {
     //   this.selectedIndex = 0;

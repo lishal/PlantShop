@@ -144,16 +144,15 @@
 .activeSliderDetail {
     display: flex;
     flex-direction: column;
-    width: 200px;
-    align-items: center;
+    flex: 1;
 
 }
 
 .activeSlidercartBtn {
-    width: 250px;
     height: 7vh;
     background-color: white;
     border-radius: 50px;
+    flex: 1;
 
 }
 
@@ -168,7 +167,6 @@
 
 .imageInfo {
     position: absolute;
-    height: 12vh;
     width: 50%;
     bottom: 0;
     left: 50%;
@@ -201,6 +199,14 @@
 @media only screen and (max-width:844px) {
     .productDetail:nth-child(1) {
         order: 2;
+    }
+
+    .imageInfo {
+        flex-direction: column;
+    }
+
+    .activeSlidercartBtn {
+        width: 100%;
     }
 
 }
