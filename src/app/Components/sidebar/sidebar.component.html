@@ -2,10 +2,11 @@
     <div class="sideBarItem">
         <img src="../../../assets/svgs/home.svg" alt="HomeSVG">
     </div>
-    <div class="sideBarItem active">
+    <div class="sideBarItem " [routerLink]="['/']" [routerLinkActive]="'active'"
+        [routerLinkActiveOptions]="{exact: true}">
         <img src="../../../assets/svgs/plant.svg" alt="PlantSVG">
     </div>
-    <div class="sideBarItem">
+    <div class="sideBarItem" [routerLink]="['/cart']" [routerLinkActive]="'active'">
         <img src="../../../assets/svgs/cart.svg" alt="CartSVG">
     </div>
     <div class="sideBarItem">

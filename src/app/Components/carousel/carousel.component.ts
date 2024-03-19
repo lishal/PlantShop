@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { CartService } from 'src/app/Services/cart.service';
 import { DataService } from 'src/app/Services/data.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class CarouselComponent implements OnInit {
   activeIndexData: any[];
   constructor(
     private dataService: DataService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private cartService: CartService
   ) {}
   ngOnInit(): void {
     this.dataService.loadProducts().subscribe((data) => {
@@ -73,5 +75,9 @@ export class CarouselComponent implements OnInit {
     // } else {
     //   this.selectedIndex++;
     // }
+  }
+  addToCart(id: any) {
+    let itemToBeAdded = this.products.find((product) => product.id == id);
+    this.cartService.addToCart(itemToBeAdded);
   }
 }

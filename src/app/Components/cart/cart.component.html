@@ -1,0 +1,50 @@
+<div class="cartContainer">
+    <div class="cartItems">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        S.N
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <!-- <tbody  *ngFor="let item of cartItems; let i = index">
+                <tr>
+                    <td>{i}</td>
+                    <td>Demoo</td>
+                    <td>1</td>
+                    <td>ADd</td>
+                </tr>
+            </tbody> -->
+            <ng-container *ngIf="cartItems && cartItems.length > 0">
+                <tbody align="center" *ngFor="let item of cartItems; let i = index">
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td>1</td>
+                        <td><button class="removeBtn" (click)="removeFromCart(item)">Remove</button></td>
+                    </tr>
+                </tbody>
+            </ng-container>
+            <div *ngIf="!cartItems || cartItems.length === 0">
+                <p>Your cart is empty</p>
+            </div>
+        </table>
+    </div>
+    <div class="cartCheckout">
+        <button>Checkout</button>
+    </div>
+</div>

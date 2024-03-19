@@ -1,46 +1,46 @@
-<div class="imageSlider">
-    <div class="imageHeader">
-        <div class="leftHeaderItem flex-center">
-            <img src="../../../assets/svgs/gallery.svg" alt="MenuSvg">
-        </div>
-        <div class="leftHeaderItem flex-center">
-            <img src="../../../assets/svgs/notification.svg" alt="MenuSvg">
-        </div>
-        <div class="leftHeaderItem flex-center">
-            <img src="../../../assets/svgs/favourite.svg" alt="MenuSvg">
-        </div>
-        <div class="rightHeader">
-            <input type="text" class="rightheaderSearch" placeholder="Search">
-            <img src="../../../assets/svgs/search.svg" alt="Search" class="rightheaderSearchIcon">
-        </div>
-    </div>
-
-    <div class="productContainer flex-center">
-        <div class="productDetail flex-center" *ngFor="let product of products;let i=index"
-            [ngClass]="{'activeProduct': i==1}">
-
-            <img class="productImage" [id]="product.id" [src]="product.productImage" [alt]="product.name">
-            <div *ngIf="product.id != activeIndex" class="productInfo flex-center">
-                <div class="inactiveItem-name">
-                    {{ product.name }}
-                </div>
-                <div class="inactiveItem-price">
-                    {{ product.price }}
-                </div>
-
+<div class="sliderContainer">
+    <div class="imageSlider">
+        <div class="imageHeader">
+            <div class="leftHeaderItem flex-center">
+                <img src="../../../assets/svgs/gallery.svg" alt="MenuSvg">
+            </div>
+            <div class="leftHeaderItem flex-center">
+                <img src="../../../assets/svgs/notification.svg" alt="MenuSvg">
+            </div>
+            <div class="leftHeaderItem flex-center">
+                <img src="../../../assets/svgs/favourite.svg" alt="MenuSvg">
+            </div>
+            <div class="rightHeader">
+                <input type="text" class="rightheaderSearch" placeholder="Search">
+                <img src="../../../assets/svgs/search.svg" alt="Search" class="rightheaderSearchIcon">
             </div>
         </div>
 
+        <div class="productContainer flex-center">
+            <div class="productDetail flex-center" *ngFor="let product of products;let i=index"
+                [ngClass]="{'activeProduct': i==1}">
+
+                <img class="productImage" [id]="product.id" [src]="product.productImage" [alt]="product.name">
+                <div *ngIf="product.id != activeIndex" class="productInfo flex-center">
+                    <div class="inactiveItem-name">
+                        {{ product.name }}
+                    </div>
+                    <div class="inactiveItem-price">
+                        {{ product.price }}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button class="previousBtn" (click)="onPreviousBtnClick()">
+            <img src="../../../assets/svgs/arrow-left.svg" alt="ArrowLeft">
+        </button>
+        <button class="nextBtn" (click)="onNextBtnClick()">
+            <img src="../../../assets/svgs/arrow-right.svg" alt="ArrowRight">
+        </button>
     </div>
-    <button class="previousBtn" (click)="onPreviousBtnClick()">
-        <img src="../../../assets/svgs/arrow-left.svg" alt="ArrowLeft">
-    </button>
-    <button class="nextBtn" (click)="onNextBtnClick()">
-        <img src="../../../assets/svgs/arrow-right.svg" alt="ArrowRight">
-    </button>
-</div>
-<div class="imageInfo">
-    <!-- <div *ngFor="let product of products">
+    <div class="imageInfo">
+        <!-- <div *ngFor="let product of products">
         <div class="activeSliderDetail" *ngIf="product.id == activeIndex">
             <div class="activeSliderImage-name">
                 {{ product.name }}
@@ -51,15 +51,16 @@
 
         </div>
     </div> -->
-    <div class="activeSliderDetail">
-        <div class="activeSliderImage-name flex-center">
-            {{ activeIndexData[0].name }}
+        <div class="activeSliderDetail">
+            <div class="activeSliderImage-name flex-center">
+                {{ activeIndexData[0].name }}
+            </div>
+            <div class="activeSliderImage-price flex-center">
+                {{ activeIndexData[0].price}}
+            </div>
         </div>
-        <div class="activeSliderImage-price flex-center">
-            {{ activeIndexData[0].price}}
+        <div class="activeSlidercartBtn">
+            <button class="flex-center" (click)="addToCart(activeIndex)">+ Add to Cart</button>
         </div>
-    </div>
-    <div class="activeSlidercartBtn">
-        <button class="flex-center">+ Add to Cart</button>
     </div>
 </div>
